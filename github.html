@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My GitHub Pages Website</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #FFFFFF;
+      font-family: "Arial", sans-serif;
+    }
+    
+    h1 {
+      font-size: 48px;
+      text-align: center;
+      margin-top: 100px;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px #333333;
+    }
+    
+    #content {
+      display: none;
+      font-size: 24px;
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 100px;
+      text-shadow: 2px 2px #333333;
+    }
+    
+    #button {
+      background-color: #FFFFFF;
+      color: #000000;
+      font-size: 24px;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    #button:hover {
+      background-color: #333333;
+      color: #FFFFFF;
+    }
+    
+    #stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to my GitHub Pages website!</h1>
+  
+  <div id="content">
+    <p>This is my website's content.</p>
+  </div>
+  
+  <button id="button">Toggle Content</button>
+  
+  <div id="stars"></div>
+  
+  <script>
+    // Add a button that toggles the visibility of the content
+    var button = document.getElementById("button");
+    var content = document.getElementById("content");
+    button.onclick = function() {
+      if (content.style.display === "none") {
+        content.style.display = "block";
+        button.innerHTML = "Hide Content";
+      } else {
+        content.style.display = "none";
+        button.innerHTML = "Show Content";
+      }
+    };
+    
+    // Add a starry background
+    var stars = document.getElementById("stars");
+    for (var i = 0; i < 100; i++) {
+      var star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      stars.appendChild(star);
+    }
+  </script>
+</body>
+</html>
